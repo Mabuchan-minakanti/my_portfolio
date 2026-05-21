@@ -1,0 +1,22 @@
+image: node:20
+
+stages:
+  - install
+  - build
+
+cache:
+  paths:
+    - node_modules/
+
+before_script:
+  - npm install
+
+install_dependencies:
+  stage: install
+  script:
+    - echo "Dependencies installed"
+
+build_project:
+  stage: build
+  script:
+    - npm run build
